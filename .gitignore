@@ -81,6 +81,7 @@ yarn-debug.log*
 /test/version_tmp/
 /tmp/
 .idea/*
+.idea
 
 # Used by dotenv library to load environment variables.
 # .env
