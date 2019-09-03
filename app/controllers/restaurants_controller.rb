@@ -18,7 +18,9 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
 
-    if @restaurant.save
+    did_creation_succeed = @restaurant.save
+
+    if did_creation_succeed
       render json: @restaurant, status: :created, location: @restaurant, notice:'Restaurant was successfully created.'
     else
       render json: @restaurant.errors, status: :unprocessable_entity
@@ -26,8 +28,12 @@ class RestaurantsController < ApplicationController
   end
 
   # PATCH/PUT /restaurants/1
+
   def update
-    if @restaurant.update(restaurant_params)
+
+    was_update_successful = @restaurant.update(restaurant_params)
+
+    if was_update_successful
       render json: @restaurant, notice: 'Restaurant was successfully updated.'
     else
       render json: @restaurant.errors, status: :unprocessable_entity
