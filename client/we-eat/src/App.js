@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Form } from 'semantic-ui-react'
-import HeaderContent from "semantic-ui-react/dist/commonjs/elements/Header/HeaderContent";
-import HeaderSubHeader from "semantic-ui-react/dist/commonjs/elements/Header/HeaderSubheader";
+import { Header, Icon, Image, Form } from 'semantic-ui-react'
+
 
 const cuisine_options = [
     { key: 'is', text: 'Israeli', value: 'israeli' },
@@ -25,6 +24,7 @@ const delivery_time_options = [
 ]
 
 class CreateRestaurantForm extends Component {
+
     state = {}
 
     handleChange = (e, { value }) => this.setState({ value })
@@ -32,8 +32,12 @@ class CreateRestaurantForm extends Component {
     render() {
         const { value } = this.state
         return (
+            <>
             <div>
-                <HeaderSubHeader size="huge">We Eat</HeaderSubHeader>
+                <h1>We Eat</h1>
+            </div>
+                <br/>
+            <div>
                 <Form>
                     <Form.Input fluid label='Restaurant Name' />
                     <Form.Select  fluid  label='Cuisine'  options={cuisine_options}  />
@@ -45,6 +49,7 @@ class CreateRestaurantForm extends Component {
                     <Form.Button>Submit</Form.Button>
                 </Form>
             </div>
+                </>
         )
     }
 }
