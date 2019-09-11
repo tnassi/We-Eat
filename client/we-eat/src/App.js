@@ -43,22 +43,25 @@ class CreateRestaurantForm extends Component {
                 <br/>
             <div>
                 <Form onSubmit={() => alert("blah")}>
-                    <FormField control={Input} label='Restaurant Name' outline />
+                    <FormField control={Input} defaultValue="Foo" label='Restaurant Name' outline />
+                    <br />
                     <FormField control={Select} fluid  label='Cuisine'  options={cuisine_options}  />
+                    <br />
                     <FormField control={Select}  fluid  label='Rating'  options={star_rating_options}  />
+                    <br />
                     <FormField label="Accepts 10Bis" control={() => (
                         <>
-
-<Radio  name="acceptstenbis"  label='Yes'  value='yes'  checked={value === 'yes'}  onChange={this.handleChange}/>
+                    <Radio  name="acceptstenbis"  label='Yes'  value='yes'  checked={value === 'yes'}  onChange={this.handleChange}/>
                     <Radio  name="acceptstenbis"  label='No'  value='no' checked={value === 'no'}  onChange={this.handleChange}/>
-                   
                         </>
                     )} />
+                    <br />
                     <FormField control={Select} fluid label='Delivery Time' options={delivery_time_options} />
+                    <br/>
                     <Button type="submit">Submit</Button>
                 </Form>
             </div>
-                </>
+            </>
         )
     }
 }
