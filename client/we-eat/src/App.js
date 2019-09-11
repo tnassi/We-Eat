@@ -45,7 +45,6 @@ class CreateRestaurantForm extends Component {
                     <Form.Button>Submit</Form.Button>
                 </Form>
             </div>
-
         )
     }
 }
