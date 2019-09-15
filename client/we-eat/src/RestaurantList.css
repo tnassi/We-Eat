@@ -1,0 +1,11 @@
+.restaurantlist{
+    background-color: yellow;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 200px;
+    padding: 50px;
+    margin-top: 50px;
+}
