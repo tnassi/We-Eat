@@ -4,12 +4,12 @@ import {MenuItem} from "semantic-ui-react";
 import './NavigationBar.css';
 
 class NavigationBar extends React.Component {
-    constructor(props){
-        super(props);
-        this.state= {
-            num: 0,
-        };
-        this.onClick = this.onClick.bind(this);
+    state = {
+        activeTab: 0
+    };
+
+    handleClick = (index) => () => {
+        this.setState({activeTab : index})
     }
 
     onClick(newNum) {
@@ -18,10 +18,10 @@ class NavigationBar extends React.Component {
 
     render() {
         const tabs = ["View Restaurants", "Create Restaurant", "Do Something Else"];
-        const menuItems = tabs.map((tabname, i) => {
+        const menuItems = tabs.map((tabname, index) => {
             return  (<MenuItem
-                className={this.state.num === i ? "active": ""}
-                onClick={() => this.onClick(i)}
+                onClick={this.handleClick(index)}
+                active={this.state.activeTab === index}
                 name={tabname}
             />);
 

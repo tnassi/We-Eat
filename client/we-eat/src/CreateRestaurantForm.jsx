@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './CreateRestaurantForm.css'
 import {Button, Checkbox, Dropdown, Form, FormField, Header, Input} from "@wework-dev/dieter-ui";
 import {CheckboxProps, DropdownProps} from "semantic-ui-react";
@@ -27,7 +27,7 @@ const delivery_time_options = [
 const Select = (props: DropdownProps) => <Dropdown {...props} selection />;
 const Radio = (props: CheckboxProps) => <Checkbox {...props} radio />;
 
-class CreateRestaurantForm extends Component {
+class CreateRestaurantForm extends React.Component {
 
     state = { value: 'yes' }
 
