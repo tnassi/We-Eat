@@ -1,6 +1,6 @@
 import React from 'react';
-import {Menu} from '@wework-dev/dieter-ui';
-import {MenuItem} from "semantic-ui-react";
+import { Menu } from '@wework-dev/dieter-ui';
+import { Link } from 'react-router-dom';
 import './NavigationBar.css';
 
 class NavigationBar extends React.Component {
@@ -17,13 +17,15 @@ class NavigationBar extends React.Component {
     };
 
     render() {
-        const tabs = ["View Restaurants", "Create Restaurant", "Do Something Else"];
-        const menuItems = tabs.map((tabname, index) => {
-            return  (<MenuItem
+        const tabs = [{ name: "View Restaurants", link: '/' }, { name: "Create Restaurant", link: '/create'}, { name:  "Do Something Else", link: '/unknown'}];
+        const menuItems = tabs.map((tab, index) => {
+            return  (<Menu.Item
                 onClick={this.handleClick(index)}
                 active={this.state.activeTab === index}
-                name={tabname}
-            />);
+                name={tab.name}
+            >
+                <Link to={tab.link}>{tab.name}</Link>  
+            </Menu.Item>);
 
         });
 

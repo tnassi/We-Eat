@@ -37,9 +37,6 @@ class CreateRestaurantForm extends React.Component {
         const { value } = this.state
         return (
             <>
-                <div>
-                    <Header as="h2" className="formheader"> Create Restaurant </Header>
-                </div>
                 <div className="formcontainer">
                     <Form onSubmit={() => alert("Your Restaurant has been created")}>
                         <FormField className="formtext"  control={Input} defaultValue="Foo" label='Restaurant Name' outline />
