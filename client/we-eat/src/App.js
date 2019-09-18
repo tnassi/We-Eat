@@ -7,7 +7,6 @@ import RestaurantsList from "./RestaurantsList";
 import "./App.css";
 import NavigationBar from "./NavigationBar";
 import Home from "./Home";
-import "./shakshuka.jpeg";
 
 class App extends React.Component {
   render() {
