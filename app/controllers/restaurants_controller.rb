@@ -16,8 +16,9 @@ class RestaurantsController < ApplicationController
 
   # POST /restaurants
   def create
+    puts "0" * 25
     @restaurant = Restaurant.new(restaurant_params)
-
+    puts "4" * 25
     did_creation_succeed = @restaurant.save
 
     if did_creation_succeed
