@@ -6,7 +6,7 @@ class PageHeader extends React.Component {
     render() {
         return (
             <div>
-                <h1 className="header" as="h1"> We Eat </h1>
+                <h1 className="pageheader" as="h1"> We Eat </h1>
             </div>
         )
     }

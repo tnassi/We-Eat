@@ -2,6 +2,7 @@ import React from "react";
 import "./RestaurantList.css";
 import { List, ListItem, ListContent, ListHeader, ListDescription } from "semantic-ui-react";
 import { Avatar } from '@wework-dev/dieter-ui';
+import { getRatingAsEmoji } from './CreateRestaurantForm.jsx'
 
 
 class RestaurantsList extends React.Component {
@@ -44,7 +45,7 @@ class RestaurantsList extends React.Component {
               <ListContent>
                 <ListHeader>{restaurant.name}</ListHeader>
                 <ListDescription>
-                  {restaurant.cuisine}
+                  {restaurant.cuisine}{getRatingAsEmoji(restaurant.rating)}
                 </ListDescription>
               </ListContent>
             </ListItem>

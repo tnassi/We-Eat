@@ -14,18 +14,26 @@ import { CheckboxProps, DropdownProps } from "semantic-ui-react";
 import Emoji from './Emoji.jsx';
 
 const cuisine_options = [
-  { key: "is", text: "Israeli", value: "israeli" },
-  { key: "it", text: "Italian", value: "italian" },
-  { key: "am", text: "American", value: "american" },
-  { key: "as", text: "Asian", value: "asian" },
-  { key: "su", text: "Sushi", value: "sushi" }
+  { key: "is", text: "Israeli 🇮🇱", value: "israeli" },
+  { key: "it", text: "Italian 🇮🇹", value: "italian" },
+  { key: "am", text: "American 🇺🇸", value: "american" },
+  { key: "as", text: "Asian 🇨🇳", value: "asian" },
+  { key: "su", text: "Sushi 🇯🇵", value: "sushi" },
+  { key: "mx", text: "Mexican 🇲🇽", value: "mexican"}
 ];
 
 const star_rating_options = [
-  { key: "1", text: "1 star", value: "1 star" },
-  { key: "2", text: "2 stars", value: "2 stars" },
-  { key: "3", text: "3 stars", value: "3 stars" }
+  { key: "1", text: "⭐", value: "1 star" },
+  { key: "2", text: "⭐⭐", value: "2 stars" },
+  { key: "3", text: "⭐⭐⭐", value: "3 stars" }
 ];
+
+export const getRatingAsEmoji = (ratingKey) => {
+  const result = star_rating_options.find(rating => {
+    return rating.key == ratingKey;
+  });
+  return result && result.text;
+};
 
 const delivery_time_options = [
   { key: "30", text: "30 min", value: "30 min" },
