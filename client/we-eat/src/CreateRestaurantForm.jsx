@@ -7,9 +7,11 @@ import {
   Form,
   FormField,
   Header,
-  Input
+  Input,
+  Modal
 } from "@wework-dev/dieter-ui";
 import { CheckboxProps, DropdownProps } from "semantic-ui-react";
+import Emoji from './Emoji.jsx';
 
 const cuisine_options = [
   { key: "is", text: "Israeli", value: "israeli" },
@@ -45,7 +47,7 @@ class CreateRestaurantForm extends React.Component {
     return (
       <>
         <div className="formcontainer">
-          <Form onSubmit={() => alert("Your Restaurant has been created")}>
+          <Form>
             <FormField
               className="formtext"
               control={Input}
@@ -94,9 +96,26 @@ class CreateRestaurantForm extends React.Component {
               label="Delivery Time"
               options={delivery_time_options}
             />
-            <Button className="formbutton" type="submit">
-              Create
-            </Button>
+            <Modal
+              actions={[
+                {
+                  content: 'Done',
+                  key: 'done',
+                  positive: true
+                }
+              ]}
+              centered
+              closeOnDimmerClick
+              closeOnDocumentClick={false}
+              content="Restaurant has been created."
+              dimmer
+              eventPool="Modal"
+              header="Success!"
+              onActionClick={function noRefCheck(){}}
+              onClose={function noRefCheck(){}}
+              onOpen={function noRefCheck(){}}
+              trigger={<Button>Create</Button>}
+            />
           </Form>
         </div>
       </>
