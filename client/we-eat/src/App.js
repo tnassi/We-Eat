@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./Header.jsx";
-import Map from "./Map.jsx";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import CreateRestaurantForm from "./CreateRestaurantForm.jsx";
 import RestaurantsList from "./RestaurantsList";
@@ -9,6 +8,7 @@ import NavigationBar from "./NavigationBar";
 import Home from "./Home";
 
 class App extends React.Component {
+
   render() {
     return (
       <>

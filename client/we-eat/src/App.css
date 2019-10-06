@@ -1,6 +1,14 @@
 .container {
-    background-image: "shakshuka.jpeg";
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 30px 50px;
+    align-items: flex-start;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.container .ui.card {
+    margin-top: 0px;
+    margin: 0px 30px 30px;
 }

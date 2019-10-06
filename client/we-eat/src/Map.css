@@ -1,7 +1,5 @@
 .map-background {
     display: flex;
-    justify-content: space-evenly;
-    width: 70%;
-    padding: 50px;
-    margin-top: 50px;
+    width: 45%;
+
 }
