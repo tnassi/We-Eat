@@ -15,7 +15,5 @@ parsed_response = JSON.parse(response)
 
 parsed_response["restaurants"].each do |a|
     r = a["restaurant"]
-    ap r["name"]
-    new_restaurant = Restaurant.new(name: r["name"], cuisine: r["cuisines"].split(", ")[0], rating: (r["user_rating"]["aggregate_rating"].to_f/5*3).to_i, accepts_ten_bis: true, address: r["location"]["address"], maximum_delivery_time: 1)
-    new_restaurant.save
+    new_restaurant = Restaurant.create!(name: r["name"], cuisine: r["cuisines"].split(", ")[0], rating: (r["user_rating"]["aggregate_rating"].to_f/5*3).to_i, accepts_ten_bis: true, address: r["location"]["address"], maximum_delivery_time: 1, image_url: r["thumb"], latitude: r["location"]["latitude"], longitude: r["location"]["longitude"])
 end
