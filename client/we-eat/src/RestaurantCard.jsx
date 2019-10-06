@@ -3,12 +3,6 @@ import { Card, Icon, Image, Button } from "semantic-ui-react";
 import { getRatingAsEmoji } from "./CreateRestaurantForm.jsx";
 import "./RestaurantCard.css";
 
-const images = [
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcrxVwuYJzCio9VvR_L6oQ7HPhmq_5KvOW3MapcmT-VtGnQHEgjA",
-  "https://www.pressurecookingtoday.com/wp-content/uploads/2018/12/Pressure-Cooker-Penne-and-Quick-Marinara-Sauce-Pressure-Cooking-Today-720x720.jpg",
-  "https://natashaskitchen.com/wp-content/uploads/2019/02/Greek-Salad.jpg"
-];
-
 class RestaurantCard extends React.Component {
 
 
@@ -19,7 +13,7 @@ class RestaurantCard extends React.Component {
         {this.props.restaurants.map(restaurant => (
           <Card key={restaurant.id}>
             <Image
-              src={images[1]}
+              src={restaurant.image_url}
               wrapped
               ui={false}
             />
