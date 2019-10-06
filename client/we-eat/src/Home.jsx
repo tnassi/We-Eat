@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./Header.jsx";
-import GoogleMap from "./GoogleMap.jsx";
 import RestaurantsList from "./RestaurantsList";
 import "./App.css";
 import NavigationBar from "./NavigationBar";
@@ -40,7 +39,6 @@ constructor() {
       <>
         <section className="container">
           <RestaurantCard restaurants={this.state.restaurants} />
-          <GoogleMap />
         </section>
       </>
     );
